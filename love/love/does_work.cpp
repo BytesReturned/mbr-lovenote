@@ -58,7 +58,7 @@ void write_message(char message[], DWORD length){
 	// replacement for exceptions.. heh
 	while (true){
 
-		// if disk is writable..
+		// if disk is not writable show an error...
 		if(!DeviceIoControl(hDrive,IOCTL_DISK_IS_WRITABLE,NULL,0,NULL,0,&ioRet,NULL)){
 			ShowError(_T("Checking to see if disk is writable"));
 			break;
